@@ -1,0 +1,42 @@
+// Media queries "min-width"
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+  
+// Media queries "max-width"
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+  
+// Cover image
+@mixin cover-image($paddingTop: 100%) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: $paddingTop;
+  }
+
+  img {
+    @extend %position--absolute-full-size;
+    object-fit: cover;
+  }
+}
+
+  

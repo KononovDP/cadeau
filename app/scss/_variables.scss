@@ -1,0 +1,47 @@
+$container-width: 1220px;
+$container-gutters: 20px;
+
+// Typography
+$font-family-base:     'Boston';
+
+$font-light:    300;
+$font-regular:  400;
+$font-semibold: 500;
+
+// Color palette
+$primary: #1F35D4;
+$secondary: #E160E4;
+$black: #161616;
+$white: #FFF;   
+
+$spacer: 16px;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25), //4
+    2: ($spacer * .5), //8
+    3: ($spacer * .75), //12
+    4: $spacer, //16
+    5: ($spacer * 1.25), //20
+    6: ($spacer * 1.5), //24
+    7: ($spacer * 1.75), //28
+    8: ($spacer * 2), //32
+    9: ($spacer * 2.25), //36
+    10: ($spacer * 2.5) //40
+  ),
+  $spacers
+);
+
+// Grid breakpoints
+$grid-breakpoints: ();
+$grid-breakpoints: map-merge(
+  (
+    xs: 320,
+    sm: 768px,
+    md: 1024px,
+    lg: 1170px,
+    xl: 1420px
+  ),
+  $grid-breakpoints
+); 

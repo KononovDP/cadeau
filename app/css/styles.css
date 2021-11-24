@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Boston";
+  src: url("../fonts/Boston-Light.woff2") format("woff2");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Boston";
+  src: url("../fonts/Boston-Regular.woff2") format("woff2");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Boston";
+  src: url("../fonts/Boston-SemiBold.woff2") format("woff2");
+  font-weight: 500; }
+
+body {
+  background: #000; }
+  @media (min-width: 1024px) {
+    body {
+      background: #f00; } }
+
+.h1 {
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Boston";
+  font-weight: 300; }
+
+.h2 {
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Boston";
+  font-weight: 400; }
+
+.h3 {
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Boston";
+  font-weight: 500; }
