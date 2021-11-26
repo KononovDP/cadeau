@@ -151,6 +151,10 @@ body {
   padding-right: 20px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .cover__img {
   position: relative;
   display: block;
@@ -166,6 +170,59 @@ body {
 .cover__img img {
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.5);
+  z-index: 100;
+}
+
+.loader__inner {
+  display: block;
+  border-style: solid;
+  border-color: #1F35D4;
+  border-top-color: #E160E4;
+  border-radius: 50%;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .button {
@@ -594,6 +651,12 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .loader__inner {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+  }
+
   .button {
     height: 50px;
     font-size: 15px;
@@ -652,6 +715,12 @@ body {
 }
 
 @media (max-width: 1023.98px) {
+  .loader__inner {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+
   .burger {
     position: relative;
     width: 40px;

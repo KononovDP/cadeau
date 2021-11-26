@@ -44,6 +44,11 @@ $(document).ready(function() {
     }, 400)
   });
 
+  setTimeout(function() {
+    $('.card__section').removeClass('hidden');
+    $('.loader').addClass('hidden');
+  },3000);
+
   // Filter
   (function() {
     const headerHeight = $('.header').height();
