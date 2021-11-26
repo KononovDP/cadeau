@@ -23,8 +23,9 @@
 }
   
 // Cover image
-@mixin cover-image($paddingTop: 100%) {
+@mixin cover-image($paddingTop: 0%) {
   position: relative;
+  display: block;
   overflow: hidden;
 
   &::before {
@@ -34,9 +35,8 @@
   }
 
   img {
-    @extend %position--absolute-full-size;
+    @extend %position-absolute-full-size;
     object-fit: cover;
   }
 }
-
   

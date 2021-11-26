@@ -9,7 +9,8 @@
 .card {
   &__list {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: map-get($spacers, 4);
+    padding: map-get($spacers, 8) 0;
 
     @include media-breakpoint-up(sm) {
       grid-template-columns: repeat(2, 1fr);
@@ -17,6 +18,7 @@
 
     @include media-breakpoint-up(md) {
       grid-template-columns: repeat(3, 1fr);
+      padding: 60px 0;
     }
   }
 
@@ -28,7 +30,7 @@
 
   &__media {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: map-get($spacers, 4);
 
     &::before,
     &::after {
@@ -86,35 +88,6 @@
     font-size: 17px;
     line-height: 30px;
     font-weight: $font-semibold;
-  }
-}
-
-.rating {
-  position: relative;
-  display: inline-flex;
-  height: 25px;
-  margin: 0 auto;
-  font-size: 25px;
-
-  &::before {
-    content: '★★★★★';
-    opacity: .5;
-    color: $grey;
-  }
-
-  &__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-
-    &::after {
-      content: '★★★★★';
-      @extend %position-absolute-full-size;
-      display: block;
-      color: gold;
-      overflow: hidden;
-    }
   }
 }
 

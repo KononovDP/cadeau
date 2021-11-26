@@ -1,0 +1,13 @@
+.datepicker {
+  padding: map-get($spacers, 2) map-get($spacers, 3) map-get($spacers, 2) map-get($spacers, 8);
+  background-color: $grey-lighter;
+  background-image: url('../images/datepicker.svg');
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: map-get($spacers, 3) center;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: $font-semibold;
+}

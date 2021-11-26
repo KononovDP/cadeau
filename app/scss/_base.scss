@@ -6,10 +6,6 @@ body {
   color: $black;
 }
 
-.wrapper {
-  height: 2000px;
-}
-
 .container {
   width: 100%;
   max-width: $container-width;
@@ -19,18 +15,9 @@ body {
 }
 
 .cover__img {
-  position: relative;
-  display: block;
-  width: 100%;
-  overflow: hidden;
+  @include cover-image();
+} 
 
-  &::before {
-    content: '';
-    display: block;
-  }
-
-  .image {
-    @extend %position-absolute-full-size;
-    object-fit: cover;
-  }
+.sr-only {
+  @extend %sr-only;
 }

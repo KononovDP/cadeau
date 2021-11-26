@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>Hotel Giftcard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.svg" type="image/svg">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -65,6 +67,29 @@
         </div>
       </div>
       <!-- HERO END -->
+
+      <!-- FILTERS START -->
+      <div class="filter__section">
+        <div class="container">
+          <div class="filter__inner">
+            <div class="filter__col">
+              <label for="datepicker" class="sr-only">Choose date</label>
+              <input id="datepicker" class="datepicker" type="text" name="dates">
+            </div>
+            <div class="filter__col">
+              <label for="Guests" class="sr-only">Guests</label>
+              <select id="Guests" class="select select__user">
+                <option value="1 volwassenen  -  0 kinderen">1 volwassenen  -  0 kinderen</option>
+                <option value="1 volwassenen  -  1 kinderen">1 volwassenen  -  1 kinderen</option>
+                <option value="2 volwassenen  -  0 kinderen" selected>2 volwassenen  -  0 kinderen</option>
+                <option value="2 volwassenen  -  1 kinderen">2 volwassenen  -  1 kinderen</option>
+                <option value="2 volwassenen  -  2 kinderen">2 volwassenen  -  2 kinderen</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FILTERS END -->
 
       <!-- CARDS START -->
       <div class="card__section">
@@ -341,6 +366,10 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
     <script src="./js/main.js"></script>
 
 </body>

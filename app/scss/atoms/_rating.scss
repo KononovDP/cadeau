@@ -1,0 +1,28 @@
+.rating {
+  position: relative;
+  display: inline-flex;
+  height: 25px;
+  margin: 0 auto;
+  font-size: 25px;
+
+  &::before {
+    content: '★★★★★';
+    opacity: .5;
+    color: $grey;
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    &::after {
+      content: '★★★★★';
+      @extend %position-absolute-full-size;
+      display: block;
+      color: gold;
+      overflow: hidden;
+    }
+  }
+}

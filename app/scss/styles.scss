@@ -5,9 +5,14 @@
 @import "./reset";
 @import "./extends";
 
+@import "./base";
+
 // Atoms
 @import "./atoms/buttons";
-@import "./atoms//burger";
+@import "./atoms/datepicker"; 
+@import "./atoms/select"; 
+@import "./atoms/burger";
+@import "./atoms/rating";
 
 // Typography
 @import "./typography/typography";
@@ -15,6 +20,5 @@
 // Components
 @import "./components/header";
 @import "./components/hero";
+@import "./components/filter";
 @import "./components/cards";
-
-@import "./base";
