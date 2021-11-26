@@ -92,24 +92,50 @@
 }
 
 .card__item {
-  &:hover {
-    .card__media {
-      &::before {
-        transform: rotate(-2deg);
+  &:nth-child(odd) {
+    &:hover {
+      .card__media {
+        &::before {
+          transform: rotate(-2deg);
+        }
+    
+        &::after {
+          transform: rotate(-4deg);
+        }
       }
-  
-      &::after {
-        transform: rotate(-4deg);
+    
+      .card__img__overlay {
+        &::before {
+          transform: rotate(-1deg);
+        }
+    
+        &::after {
+          transform: rotate(4deg) translateY(-10px);
+        }
       }
     }
-  
-    .card__img__overlay {
-      &::before {
-        transform: rotate(-1deg);
+  }
+
+  &:nth-child(even) {
+    &:hover {
+      .card__media {
+        &::before {
+          transform: rotate(2deg) translateY(5px);
+        }
+    
+        &::after {
+          transform: rotate(-4deg) translateY(10px);
+        }
       }
-  
-      &::after {
-        transform: rotate(4deg) translateY(-10px);
+    
+      .card__img__overlay {
+        &::before {
+          transform: rotate(1deg)translateY(-5px);
+        }
+    
+        &::after {
+          transform: rotate(-4deg) translateY(-10px);
+        }
       }
     }
   }

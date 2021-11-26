@@ -11,7 +11,6 @@ $(document).ready(function() {
 
   // Show/hide menu on mobile
   $('.burger').on('click', function() {
-    $('header').addClass('sticky');
     $(this).toggleClass('active');
     $('.header__nav__wrapper').slideToggle(300);
   });
@@ -54,12 +53,14 @@ $(document).ready(function() {
 
     $(window).on('load scroll', function(){
       if ($(window).scrollTop() > targetOffset) { 
-        $('.filter__section').addClass('sticky').css({
+        $('.filter__section').css({
+          'position': 'fixed',
           'top': headerHeight + 'px'
         });
         $('.card__section').css({'margin-top': filterHeight + 'px'})
-      }else{
-        $('.filter__section').removeClass('sticky').css({
+      } else {
+        $('.filter__section').css({
+          'position': 'static',
           'top': 'auto'
         });
         $('.card__section').css({'margin-top': 0})
