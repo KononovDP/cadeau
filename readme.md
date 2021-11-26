@@ -1,3 +1,3 @@
-Run npm install
-Run 'gulp' for develompent mode
-Run 'gulp build' for building project
+1. Run npm install
+2. Run 'gulp' for develompent mode
+3. Run 'gulp build' for building project
