@@ -3,9 +3,7 @@ var sass = require('gulp-sass');
 var gcmq = require('gulp-group-css-media-queries');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
-var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
@@ -34,18 +32,27 @@ gulp.task('sass', function() {
         }));
 });
 
-gulp.task('useref', function() {
+gulp.task('styles', function() {
+    return gulp.src('app/css/**/*.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+});
+
+// Moves all fonts into /dist folder
+gulp.task('scripts', function() {
+    return gulp.src('app/js/**/*')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('html', function() {
     return gulp.src('app/*.html')
-        .pipe(useref())
-        .pipe(gulpIf('*.js', uglify()))
-        // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('dist'));
 });
 
 // Compress all images and move them to /dist/images
 gulp.task('images', function() {
-    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg|webp)')
         // Caching images that ran through imagemin
         .pipe(cache(imagemin({
             interlaced: true
@@ -74,7 +81,7 @@ gulp.task('watch', ['browser-sync', 'sass'], function() {
 
 gulp.task('build', function (callback) {
   runSequence('clean:dist',
-    ['sass', 'useref', 'images', 'fonts'],
+    ['styles', 'scripts', 'images', 'fonts', 'html'],
     callback
   )
 });

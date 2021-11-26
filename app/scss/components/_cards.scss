@@ -1,0 +1,143 @@
+%card__image__overlay {
+  @extend %position-absolute-full-size;
+  display: block;
+  content: '';
+  background-color: $primary;
+  border-radius: 4px;
+}
+
+.card {
+  &__list {
+    display: grid;
+    grid-gap: 20px;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    color: $black;
+  }
+
+  &__media {
+    position: relative;
+    margin-bottom: 20px;
+
+    &::before,
+    &::after {
+      @extend %card__image__overlay;
+      transition: transform .3s;
+    }
+
+    &::after {
+      opacity: 0.59;
+    }
+  }
+
+  &__img__overlay {
+    &::before,
+    &::after {
+      @extend %card__image__overlay;
+      transition: transform .3s;
+    }
+
+    &::before {
+      opacity: 0.39;
+    }
+
+    &::after {
+      opacity: 0.49;
+    }
+  }
+
+  &__image {
+    border-radius: 4px;
+    z-index: 5;
+
+    &::before {
+      padding-top: 65.8%;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: $font-light;
+    color: $primary;
+    text-decoration: none;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: $font-semibold;
+  }
+
+  &__price {
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: $font-semibold;
+  }
+}
+
+.rating {
+  position: relative;
+  display: inline-flex;
+  height: 25px;
+  margin: 0 auto;
+  font-size: 25px;
+
+  &::before {
+    content: '★★★★★';
+    opacity: .5;
+    color: $grey;
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    &::after {
+      content: '★★★★★';
+      @extend %position-absolute-full-size;
+      display: block;
+      color: gold;
+      overflow: hidden;
+    }
+  }
+}
+
+.card__item {
+  &:hover {
+    .card__media {
+      &::before {
+        transform: rotate(-2deg);
+      }
+  
+      &::after {
+        transform: rotate(-4deg);
+      }
+    }
+  
+    .card__img__overlay {
+      &::before {
+        transform: rotate(-1deg);
+      }
+  
+      &::after {
+        transform: rotate(4deg) translateY(-10px);
+      }
+    }
+  }
+}

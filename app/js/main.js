@@ -1,8 +1,7 @@
-
 $(document).ready(function() {
 
   // Sticky header when scroll
-  $(window).on('load scroll', () => {
+  $(window).on('load scroll', function() {
     if ($(window).scrollTop() >= 100) {
       $('header').addClass('sticky');
     } else {
@@ -12,6 +11,7 @@ $(document).ready(function() {
 
   // Show/hide menu on mobile
   $('.burger').on('click', function() {
+    $('header').toggleClass('sticky');
     $(this).toggleClass('active');
     $('.header__nav__wrapper').slideToggle(300);
   });
@@ -25,8 +25,8 @@ $(document).ready(function() {
 
     circle.css({
       'opacity': '1',
-      'left': `${relX}px`,
-      'top': `${relY}px`,
+      'left': relX + 'px',
+      'top': relY + 'px',
       'width': '400px',
       'height': '400px',
     })
@@ -43,6 +43,5 @@ $(document).ready(function() {
         })
       }, 100)
     }, 400)
- });
-
-})
+  });
+});
