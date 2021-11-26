@@ -1,0 +1,50 @@
+
+.burger {
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background:transparent;
+    border: none;
+
+    span {
+      position: absolute;
+      left: 8px;
+      top: 18px;
+      width: 24px;
+      height: 4px;
+      background-color: $black;
+      border-radius: 2px;
+      transition: all .3s;
+
+      &:first-child {
+        transform: translateY(-8px);
+      }
+
+      &:last-child {
+        transform: translateY(8px);
+      }
+    }
+
+    &.active {
+      span {
+        &:first-child {
+          transform: translateY(0) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

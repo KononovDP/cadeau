@@ -1,0 +1,88 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: $font-regular;
+  transition: background-color .3s, box-shadow .3s;
+  cursor: pointer;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(md) {
+    height: 50px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  &__circle {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width .4s, height .4s, opacity .4s;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+// Primary button
+.button__primary {
+  background-color: $primary;
+  color: $white;
+
+  .button__circle {
+    background-color: #354CED;
+  }
+
+  &:hover {
+    background-color: #4358F4;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 6px #1F35D4;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: grey;
+    color: $grey-darker;
+  }
+}
+
+// Secondary button
+.button__secondary {
+  background-color: $secondary;
+  color: $white;
+
+  .button__circle {
+    background-color: #F171F4;
+  }
+
+  &:hover {
+    background-color: #EF94F1;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 6px #E160E4;  
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: grey;
+    color: $grey-darker;
+  }
+}
+

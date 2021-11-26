@@ -2,29 +2,58 @@
 
 <html lang="en">
 <head>
-
-    <meta charset="utf-8">
-
-    <title>Hotel Giftcard</title>
-
-    <!--build:css css/styles.min.css-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!--endbuild-->
-
-    <!--build:js js/main.min.js -->
-    <script src="js/main.js"></script>
-    <!-- endbuild -->
-
-    <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+  <meta charset="utf-8">
+  <title>Hotel Giftcard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
-    <p class="h1">Lorem ipsum dolor sit amet.</p>
-    <p class="h2">Lorem ipsum dolor sit amet.</p>
-    <p class="h3">Lorem ipsum dolor sit amet.</p>
+    <div class="wrapper">
 
+      <!-- HEADER START -->
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <a href="#" class="header__logo for-img">
+              <img src="./images/logo.svg" alt="Hotel Giftcard Logo">
+            </a>
+            <div class="header__nav__wrapper">
+              <nav class="header__nav">
+                <ul class="header__nav__list">
+                  <li class="header__nav__item"><a href="" class="header__nav__link">Zakelijk</a></li>
+                  <li class="header__nav__item"><a href="" class="header__nav__link">Saldo check</a></li>
+                </ul>
+              </nav>
+              <div class="header__actions">
+                <button class="header__btn button button__primary">
+                  <span class="button__circle"></span>
+                  <span class="button__text">Geef een hotelgiftcard</span>
+                </button>
+                <button class="header__btn button button__secondary">
+                  <span class="button__circle"></span>
+                  <span class="button__text">Boek een hotel</span>
+                </button>
+              </div>
+            </div>
+
+            <button class="header__burger burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- HEADER END -->
+
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var gcmq = require('gulp-group-css-media-queries');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
@@ -26,6 +27,7 @@ gulp.task('sass', function() {
             browsers: ['last 4 versions'],
             cascade: false
         }))
+        .pipe(gcmq())
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({
             stream: true

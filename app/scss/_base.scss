@@ -1,0 +1,19 @@
+body {
+  font-family: $font-family-base;
+  font-weight: $font-light;
+  font-size: 15px;
+  line-height: 30px;
+  color: $black;
+}
+
+.wrapper {
+  height: 2000px;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-left: $container-gutters;
+  padding-right: $container-gutters;
+}
