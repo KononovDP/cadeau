@@ -3,6 +3,7 @@
 @import "./functions";
 @import "./mixins";
 @import "./reset";
+@import "./extends";
 
 // Atoms
 @import "./atoms/buttons";
@@ -13,5 +14,6 @@
 
 // Components
 @import "./components/header";
+@import "./components/hero";
 
 @import "./base";
